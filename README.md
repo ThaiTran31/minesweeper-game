@@ -25,7 +25,7 @@ Follow these step-by-step instructions:
 1. Clone the GitHub repository: Start by cloning the GitHub repository to your local machine using the command:
 
 ```jsx
-git clone https://github.com/AntonScheving/README-Generator.git
+git clone https://github.com/ThaiTran31/minesweeper-game.git
 ```
 2. Install Python3 - Pip3 and/or set up your Python virtual environment then activate it (optional).
 3. Install Python packages (dependencies):
@@ -49,9 +49,7 @@ python3 main.py
 That's it. Enjoy the game!
 
 ## Badges
-<!-- [![GitHub repo size](https://img.shields.io/github/repo-size/ThaiTran31/minesweeper-game)]() -->
-
-<!-- [![GitHub top language](https://img.shields.io/github/languages/top/ThaiTran31/minesweeper-game)]() -->
+[![GitHub repo size](https://img.shields.io/github/repo-size/ThaiTran31/minesweeper-game)](https://github.com/ThaiTran31/minesweeper-game.git) [![GitHub top language](https://img.shields.io/github/languages/top/ThaiTran31/minesweeper-game)](https://github.com/ThaiTran31/minesweeper-game.git)
 
 ## Contribution
  
