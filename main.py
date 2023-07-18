@@ -1,79 +1,65 @@
-import tkinter
-from tkinter import Label
-from tkmacosx import Button
+import tkinter as tk
+from tkinter import Frame, Label
 
-
-import settings
+import settings as st
 import utils
 from cell import Cell
 
 
-root = tkinter.Tk()  # using root is a convention
-'''
-    Override the configuration of window
-'''
-root.configure(bg="white")
-root.geometry(f"{settings.WIDTH}x{settings.HEIGHT}")
-root.title("Minesweeper Game")
-root.resizable(False, False)  # avoid resizing window both width & height
+window = tk.Tk()
+window.title("Minesweeper")
+window.geometry(f"{st.WIDTH}x{st.HEIGHT}")
+window.resizable(False, False)
+window.configure(
+    bg="black"
+)
 
-top_frame = tkinter.Frame(
-    root,
+top_frame = Frame(
+    window,
+    width=utils.width_prct(100),
+    height=utils.height_prct(25),
     bg="black",
-    width=settings.WIDTH,
-    height=utils.height_prct(25)
 )
 top_frame.place(x=0, y=0)
 
-left_frame = tkinter.Frame(
-    root,
-    bg="black",
+left_frame = Frame(
+    window,
     width=utils.width_prct(25),
-    height=utils.height_prct(75)
+    height=utils.height_prct(75),
+    bg="black",
 )
 left_frame.place(x=0, y=utils.height_prct(25))
 
-center_frame = tkinter.Frame(
-    root,
-    bg="black",
-    width=utils.width_prct(75),
-    height=utils.height_prct(75)
-)
-center_frame.place(x=utils.width_prct(25), y=utils.height_prct(25))
 
-'''
-    Creating Top Game Title
-'''
-top_game_title = Label(
+main_frame = Frame(
+    window,
+    width=utils.width_prct(75),
+    height=utils.height_prct(75),
+    bg="black",
+)
+main_frame.place(x=utils.width_prct(25), y=utils.height_prct(25))
+
+top_title = Label(
     top_frame,
     bg="black",
     fg="blue",
     text="Minesweeper Game",
-    font=("", 60),
+    font=("", st.GAME_TOP_TITLE_FONTSIZE),
 )
-top_game_title.place(
-    x=utils.width_prct(30),
-    y=0
-)
+top_title.place(x=utils.width_prct(25), y=0)
 
-'''
-    Creating Left Sidebar Label
-'''
+for i in range(st.GRID_SIZE):
+    for j in range(st.GRID_SIZE):
+        cell = Cell(x=i, y=j)
+        cell.create_btn_object(main_frame)
+        cell.cell_btn.grid(
+            column=i,
+            row=j
+        )
 Cell.create_cell_count_label_object(left_frame)
 Cell.cell_count_label.place(x=0, y=0)
 
-'''
-    Creating Cell Grid
-'''
-for x in range(settings.GRID_SIZE):
-    for y in range(settings.GRID_SIZE):
-        c = Cell(x=x, y=y)
-        c.create_btn_object(center_frame)
-        c.cell_btn.grid(row=y, column=x)
-
 Cell.randomize_mines()
 
-'''
-    Run the window
-'''
-root = tkinter.mainloop()
+
+window.mainloop()

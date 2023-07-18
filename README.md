@@ -49,7 +49,7 @@ python3 main.py
 That's it. Enjoy the game!
 
 ## Badges
-[![GitHub repo size](https://img.shields.io/github/repo-size/ThaiTran31/minesweeper-game)](https://github.com/ThaiTran31/minesweeper-game.git) [![GitHub top language](https://img.shields.io/github/languages/top/ThaiTran31/minesweeper-game)](https://github.com/ThaiTran31/minesweeper-game.git)
+[![GitHub repo size](https://img.shields.io/github/repo-size/ThaiTran31/minesweeper-game)](https://github.com/ThaiTran31/minesweeper-game.git) [![GitHub top language](https://img.shields.io/github/languages/top/ThaiTran31/minesweeper-game)](https://github.com/ThaiTran31/minesweeper-game.git) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ThaiTran31/minesweeper-game)](https://github.com/ThaiTran31/minesweeper-game.git)
 
 ## Contribution
  
